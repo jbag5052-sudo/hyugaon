@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>휴가온 (Hyugaon) | 대화형 사업 계획서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #FDFBF8;
+            color: #3a4d39;
+        }
+       .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+           .chart-container {
+                height: 350px;
+            }
+        }
+       .active-tab {
+            background-color: #739072;
+            color: #ffffff;
+        }
+       .inactive-tab {
+            background-color: #ECE3CE;
+            color: #3a4d39;
+        }
+       .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #4F6F52;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+       .section-subtitle {
+            font-size: 1.125rem;
+            color: #739072;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+        }
+       .card {
+            background-color: #ffffff;
+            border: 1px solid #ECE3CE;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+       .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-[#4F6F52]">
+                🌿 휴가온 <span class="text-lg font-normal text-[#739072]">Hyugaon</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#vision" class="text-gray-700 hover:text-[#4F6F52] transition">비전</a>
+                <a href="#master" class="text-gray-700 hover:text-[#4F6F52] transition">그린힐러마스터</a>
+                <a href="#revenue" class="text-gray-700 hover:text-[#4F6F52] transition">수익 모델</a>
+                <a href="#strategy" class="text-gray-700 hover:text-[#4F6F52] transition">성장 전략</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="vision" class="py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-[#4F6F52] mb-4">삶에 쉼을 더하다, 휴가온</h1>
+                <p class="text-lg md:text-xl text-[#739072] max-w-3xl mx-auto">
+                    휴가온은 식물 기반 치유 전문가인 **그린힐러마스터를 양성**하고, 그들과 함께 일상 속 '쉼'과 긍정적인 변화를 전파하는 교육 및 라이프스타일 브랜드로 성장합니다.
+                </p>
+            </div>
+        </section>
+
+        <section id="master" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">그린힐러마스터 양성 프로그램</h2>
+                <p class="section-subtitle">
+                    휴가온은 전문성을 갖춘 그린힐러마스터를 양성하고, 이들이 다양한 분야에서 활동할 수 있도록 체계적인 교육과 실습 기회를 제공합니다.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card rounded-lg p-6 text-center">
+                        <div class="text-4xl mb-4">📚</div>
+                        <h3 class="text-xl font-bold mb-2 text-[#4F6F52]">전문 교육 커리큘럼</h3>
+                        <p class="text-gray-600">이론부터 실무까지, 생애 주기별 원예 치유 프로그램을 직접 기획하고 운영할 수 있는 실질적인 역량을 키웁니다.</p>
+                    </div>
+                    <div class="card rounded-lg p-6 text-center">
+                        <div class="text-4xl mb-4">💡</div>
+                        <h3 class="text-xl font-bold mb-2 text-[#4F6F52]">맞춤형 솔루션 제공</h3>
+                        <p class="text-gray-600">공간 디자인(플랜테리어)부터 친환경 원예 키트 활용법까지, 다양한 사업 아이템을 교육에 통합합니다.</p>
+                    </div>
+                    <div class="card rounded-lg p-6 text-center">
+                        <div class="text-4xl mb-4">🔗</div>
+                        <h3 class="text-xl font-bold mb-2 text-[#4F6F52]">전문가 네트워크</h3>
+                        <p class="text-gray-600">수료 후에도 지속적인 정보 공유와 네트워킹을 통해 전문가로서의 성장을 지원합니다.</p>
+                    </div>
+                    <div class="card rounded-lg p-6 text-center">
+                        <div class="text-4xl mb-4">🎪</div>
+                        <h3 class="text-xl font-bold mb-2 text-[#4F6F52]">팝업 스토어 실습</h3>
+                        <p class="text-gray-600">휴가온 팝업 스토어 기획 및 운영에 직접 참여하여 실제 고객 경험을 쌓을 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="revenue" class="py-16">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">그린힐러마스터 수익 모델</h2>
+                <p class="section-subtitle">
+                    그린힐러마스터 양성 교육 과정의 예상 수익 구조를 분석합니다. 교육 과정별 예상 수강료와 수익 분배 구조를 확인해 보세요.
+                </p>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#4F6F52]">과정별 수강료 예상</h3>
+                        <div class="flex justify-center mb-4 rounded-lg overflow-hidden border border-[#ECE3CE]">
+                            <button id="basic-btn" class="py-2 px-4 w-1/2 transition active-tab">기본 과정</button>
+                            <button id="advanced-btn" class="py-2 px-4 w-1/2 transition inactive-tab">전문 과정</button>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="tuitionChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-center mb-4 text-[#4F6F52]">수강료 비용 구조</h3>
+                        <p class="text-center text-gray-600 mb-4 text-sm">기본 과정 수강료(100만원) 기준</p>
+                        <div class="chart-container h-64 md:h-72">
+                            <canvas id="costChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategy" class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">단계별 성장 전략</h2>
+                <p class="section-subtitle">
+                    휴가온은 교육 전문가를 양성하고 이들과 함께 시장을 확장하는 3단계 성장 로드맵을 통해 지속 가능한 비즈니스를 만들어갑니다.
+                </p>
+                <div class="relative">
+                    <div class="absolute left-1/2 h-full w-0.5 bg-[#ECE3CE] hidden md:block"></div>
+                    <div class="space-y-12 md:space-y-0">
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                            <div class="text-center md:text-right md:pr-8">
+                                <div class="bg-[#739072] text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto md:mr-0 mb-4">1</div>
+                                <h3 class="text-2xl font-bold text-[#4F6F52]">전문가 양성 기반 구축</h3>
+                                <p class="text-gray-600 mt-2">그린힐러마스터 양성 기본 과정을 런칭하고, 온라인 마케팅을 통해 1기 수강생을 모집하여 교육 프로그램을 검증합니다.</p>
+                            </div>
+                            <div class="hidden md:block"></div>
+                        </div>
+                         <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                            <div class="hidden md:block"></div>
+                            <div class="text-center md:text-left md:pl-8">
+                                <div class="bg-[#4F6F52] text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto md:ml-0 mb-4">2</div>
+                                <h3 class="text-2xl font-bold text-[#4F6F52]">네트워크 확장 및 수익 다각화</h3>
+                                <p class="text-gray-600 mt-2">기본 과정 수료생들을 위한 전문 과정을 개설하고, 이들이 원예 키트, 플랜테리어 사업을 할 수 있도록 지원하며 수익을 공유합니다.</p>
+                            </div>
+                        </div>
+                        <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                            <div class="text-center md:text-right md:pr-8">
+                                <div class="bg-[#3a4d39] text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mx-auto md:mr-0 mb-4">3</div>
+                                <h3 class="text-2xl font-bold text-[#4F6F52]">브랜드 자산 강화</h3>
+                                <p class="text-gray-600 mt-2">그린힐러마스터들과 함께 대규모 팝업 행사 및 기업 워크숍을 기획하여 휴가온 브랜드의 가치를 시장에 확고히 각인시킵니다.</p>
+                            </div>
+                            <div class="hidden md:block"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#ECE3CE] py-8">
+        <div class="container mx-auto px-6 text-center text-[#3a4d39]">
+            <p class="font-bold">휴가온 (Hyugaon)</p>
+            <p class="text-sm">"삶에 쉼을 더하다"</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const chartFontColor = '#3a4d39';
+            const chartGridColor = 'rgba(0, 0, 0, 0.05)';
+            const primaryColor = '#739072';
+            const secondaryColor = '#4F6F52';
+            const tertiaryColor = '#ECE3CE';
+
+            const commonChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: chartFontColor,
+                            font: {
+                                family: "'Noto Sans KR', sans-serif"
+                            }
+                        }
+                    },
+                    tooltip: {
+                        bodyFont: {
+                            family: "'Noto Sans KR', sans-serif"
+                        },
+                        titleFont: {
+                            family: "'Noto Sans KR', sans-serif"
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: chartFontColor,
+                            callback: function(value) {
+                                return value.toLocaleString() + '원';
+                            }
+                        },
+                        grid: {
+                            color: chartGridColor
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: chartFontColor,
+                            font: {
+                                family: "'Noto Sans KR', sans-serif"
+                            }
+                        },
+                        grid: {
+                            color: chartGridColor
+                        }
+                    }
+                }
+            };
+            
+            const tuitionData = {
+                basic: {
+                    labels: ['수강료', '재료비'],
+                    datasets: [{
+                        label: '기본 과정 예상 비용',
+                        data: ,
+                        backgroundColor: [primaryColor, secondaryColor],
+                        borderColor: [primaryColor, secondaryColor],
+                        borderWidth: 1
+                    }]
+                },
+                advanced: {
+                    labels: ['수강료', '재료비'],
+                    datasets: [{
+                        label: '전문 과정 예상 비용',
+                        data: ,
+                        backgroundColor: [primaryColor, secondaryColor],
+                        borderColor: [primaryColor, secondaryColor],
+                        borderWidth: 1
+                    }]
+                }
+            };
+
+            const costData = {
+                labels: ['강사료', '교재/재료비', '공간/시설 운영비', '관리/홍보비', '기타'],
+                datasets: [{
+                    label: '기본 과정 수강료 구성',
+                    data: ,
+                    backgroundColor: [secondaryColor, primaryColor, '#3a4d39', '#a9b9a7', tertiaryColor],
+                    borderColor: '#FDFBF8',
+                    borderWidth: 2
+                }]
+            };
+
+            const tuitionCtx = document.getElementById('tuitionChart').getContext('2d');
+            const tuitionChart = new Chart(tuitionCtx, {
+                type: 'bar',
+                data: tuitionData.basic,
+                options: commonChartOptions
+            });
+            
+            const costCtx = document.getElementById('costChart').getContext('2d');
+            const costChart = new Chart(costCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: costData.labels,
+                    datasets: costData.datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: chartFontColor,
+                                font: {
+                                    family: "'Noto Sans KR', sans-serif"
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            function setupTabSwitch(chart, data, basicBtnId, advancedBtnId) {
+                const basicBtn = document.getElementById(basicBtnId);
+                const advancedBtn = document.getElementById(advancedBtnId);
+
+                basicBtn.addEventListener('click', () => {
+                    chart.data = data.basic;
+                    chart.update();
+                    basicBtn.classList.add('active-tab');
+                    basicBtn.classList.remove('inactive-tab');
+                    advancedBtn.classList.add('inactive-tab');
+                    advancedBtn.classList.remove('active-tab');
+                });
+
+                advancedBtn.addEventListener('click', () => {
+                    chart.data = data.advanced;
+                    chart.update();
+                    advancedBtn.classList.add('active-tab');
+                    advancedBtn.classList.remove('inactive-tab');
+                    basicBtn.classList.add('inactive-tab');
+                    basicBtn.classList.remove('active-tab');
+                });
+            }
+            
+            setupTabSwitch(tuitionChart, tuitionData, 'basic-btn', 'advanced-btn');
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
